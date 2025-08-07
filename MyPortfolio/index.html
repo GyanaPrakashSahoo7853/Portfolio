@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gyanaprakash.portfolio</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo2.ico.jpg"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/logo.ico.png"
+              alt="Gyana Prakash Sahoo"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Gyana">Gyana Prakash</h1>
+
+            <p class="title">Full Stack Developer</p>
+            
+            <div class="resume-box" onclick="openResume()">
+              <p class="resume-title">Resume</p>
+            </div>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:gyanaprakash7853@gmail.com" class="contact-link"
+                  >gyanaprakash7853@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+91 7853936387" class="contact-link">7853936387</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Bhubaneswar</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/gyanaprakashbbsr2004/" target="_blank" class="social-link" title="LinkedIn" aria-label="LinkedIn Profile">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://twitter.com/@_rinkul404_" target="_blank" class="social-link" title="Twitter" aria-label="Twitter Profile">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a href="https://github.com/GyanaPrakashSahoo7853" target="_blank" class="social-link" title="GitHub" aria-label="GitHub Profile">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #RESUME MODAL
+    -->
+
+      <div class="resume-modal-container" id="resumeModal">
+        <div class="resume-overlay" onclick="closeResume()"></div>
+        
+        <div class="resume-modal">
+          <button class="resume-close-btn" onclick="closeResume()">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          
+          <div class="resume-content">
+            <h3 class="resume-modal-title">My Resume</h3>
+            <div class="resume-pdf-container">
+              <!-- Try to show PDF first, fallback to image if PDF doesn't work -->
+              <iframe 
+                src="./assets/gyanaprakashsahoo_resume.pdf#toolbar=1&navpanes=1&scrollbar=1" 
+                width="100%" 
+                height="600px"
+                style="border: none;"
+                title="Resume PDF Viewer"
+                id="resumeIframe">
+              </iframe>
+              
+              <!-- Fallback image preview (hidden by default) -->
+              <div id="resumeImagePreview" style="display: none; text-align: center;">
+                <img src="./assets/images/resume_preview.png" 
+                     alt="Resume Preview" 
+                     style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); margin-bottom: 15px;" />
+                <p style="color: var(--light-gray); font-size: var(--fs-6);">
+                  PDF preview not available in this browser. Click download to view the full resume.
+                </p>
+              </div>
+            </div>
+            <div class="resume-actions">
+              <a href="./assets/gyanaprakashsahoo_resume.pdf" download="Gyana_Prakash_Resume.pdf" class="resume-download-btn">
+                <ion-icon name="download-outline"></ion-icon>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Projects</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Blog</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+             I’m Gyana Prakash Sahoo, a Computer Science student at Institute of Technical Education and Research (ITER), Bhubaneswar. 
+             I’m passionate about blending design with intelligence — crafting websites that are not only visually appealing but also backed by smart technology.
+            </p>
+
+            <p>
+              With a strong foundation in Frontend Development (HTML, CSS, JavaScript, Bootstrap) and growing expertise in Artificial Intelligence and Machine Learning, I enjoy solving real-world problems through both design and data.
+
+From building intuitive web interfaces to exploring machine learning models and AI-based applications, I strive to create solutions that are functional, user-friendly, and future-ready.
+
+I believe in continuous learning, creative thinking, and making tech more human-centered — one project at a time.
+            </p>
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web design</h4>
+
+                  <p class="service-item-text">
+                    The most modern and high-quality design made at a
+                    professional level.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-dev.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+
+                  <p class="service-item-text">
+                    High-quality development of sites at the professional level.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-app.svg"
+                    alt="mobile app icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                  <p class="service-item-text">
+                    Professional development of machine learning models and AI-based applications.
+                  </p>
+                </div>
+              </li>
+
+              <!-- <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-photo.svg"
+                    alt="camera icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Photography</h4>
+
+                  <p class="service-item-text">
+                    I make high-quality photos of any category at a professional
+                    level.
+                  </p>
+                </div>
+              </li> -->
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #RESUME
+      -->
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Institute of Technical Education and Research (ITER)
+                </h4>
+
+                <span>2023 - Present</span>
+
+                <p class="timeline-text">
+                  Bachelors in computer science engeneering and college is located
+                  in Bhubaneswar, India.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  St. Xavier's High School
+                </h4>
+
+                <span>2020 - 2023</span>
+
+                <p class="timeline-text">
+                  Training on basic computer fundamentals and certified me by
+                  the instution for the completion of the course.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">DAV Public School</h4>
+
+                <span>2014 - 2020</span>
+
+                <p class="timeline-text">
+                  Completed my secondary education of GPA (10) and recived so
+                  many medals in sports and games and completed my NCC training.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web developer</h4>
+
+                <span>2022 — Present</span>
+
+                <p class="timeline-text">
+                  I am a web developer and a truelancer and i have devveloped so
+                  many websites for popular companies.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">web -designer</h4>
+
+                <span>2019 — 2021</span>
+
+                <p class="timeline-text">
+                  I started my web development career with web design and
+                  created meny attractive and responsive websites.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">data entry operator</h4>
+
+                <span>2018 — 2019</span>
+
+                <p class="timeline-text">
+                  I started my jurney with data entry operator worked 1 year for
+                  a company and started learning web development
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My Skills</h3>
+
+            <div class="skills-container">
+              <!-- Languages -->
+              <div class="skill-category">
+                <h4 class="skill-category-title">Languages</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">Java</span>
+                </div>
+              </div>
+
+              <!-- Frontend -->
+              <div class="skill-category">
+                <h4 class="skill-category-title">Frontend</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">React.js</span>
+                  <span class="skill-tag">Next.js</span>
+                  <span class="skill-tag">Tailwind CSS</span>
+                </div>
+              </div>
+
+              <!-- Backend & Database -->
+              <div class="skill-category">
+                <h4 class="skill-category-title">Backend & Database</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express.js</span>
+                  <span class="skill-tag">MongoDB</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                </div>
+              </div>
+
+              <!-- Tools -->
+              <div class="skill-category">
+                <h4 class="skill-category-title">Tools</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">GitHub</span>
+                  <span class="skill-tag">AWS</span>
+                  <span class="skill-tag">Docker</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!--
+        - #PORTFOLIO
+      -->
+
+        <article class="portfolio" data-page="projects">
+          <header>
+            <h2 class="h2 article-title">Projects</h2>
+          </header>
+
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web design</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web development</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Machine Learning</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web design</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web development</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Machine Learning</button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="project-list">
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-1.jpg"
+                        alt="finance"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Finance</h3>
+
+                    <p class="project-category">Web development</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/finance-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-2.png"
+                        alt="orizon"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Orizon</h3>
+
+                    <p class="project-category">Web development</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/orizon-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-3.jpg"
+                        alt="fundo"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Fundo</h3>
+
+                    <p class="project-category">Web design</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/fundo-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="machine learning"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-4.png"
+                        alt="AI Recommendation System"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">AI Recommendation System</h3>
+
+                    <p class="project-category">Machine Learning</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/ai-recommendation-system" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-5.png"
+                        alt="dsm."
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">DSM.</h3>
+
+                    <p class="project-category">Web design</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/dsm-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-6.png"
+                        alt="metaspark"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">MetaSpark</h3>
+
+                    <p class="project-category">Web design</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/metaspark-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-7.png"
+                        alt="summary"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Summary</h3>
+
+                    <p class="project-category">Web development</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/summary-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="machine learning"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-8.jpg"
+                        alt="Predictive Analytics Dashboard"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Predictive Analytics Dashboard</h3>
+
+                    <p class="project-category">Machine Learning</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/predictive-analytics" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <div class="project-content">
+                  <a href="#" class="project-link">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+
+                      <img
+                        src="./assets/images/project-9.png"
+                        alt="arrival"
+                        loading="lazy"
+                      />
+                    </figure>
+
+                    <h3 class="project-title">Arrival</h3>
+
+                    <p class="project-category">Web development</p>
+                  </a>
+                  
+                  <div class="project-github">
+                    <a href="https://github.com/yourusername/arrival-project" target="_blank" class="github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #BLOG
+      -->
+
+        <article class="blog" data-page="blog">
+          <header>
+            <h2 class="h2 article-title">Blog</h2>
+          </header>
+
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-1.jpg"
+                      alt="Design conferences in 2022"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Design conferences in 2022
+                    </h3>
+
+                    <p class="blog-text">
+                      Created this blog for design conference in 2022.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-2.jpg"
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      Best fonts every designer
+                    </h3>
+
+                    <p class="blog-text">
+                      Blog created for developers and designer to give best
+                      fonts for their projects.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-3.jpg"
+                      alt="Design digest #80"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                    <p class="blog-text">
+                      This blog for designers to improve their creativity.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-4.jpg"
+                      alt="UI interactions of the week"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      UI interactions of the week
+                    </h3>
+
+                    <p class="blog-text">
+                      This blog about best ui interactions developed in the
+                      week.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-5.jpg"
+                      alt="The forgotten art of spacing"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">
+                      The forgotten art of spacing
+                    </h3>
+
+                    <p class="blog-text">
+                      Blog is for creators The importence of spacing in design
+                      proffesion.
+                    </p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-6.jpg"
+                      alt="Design digest #79"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                    <p class="blog-text">
+                      This blog for designers to improve their creativity.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
