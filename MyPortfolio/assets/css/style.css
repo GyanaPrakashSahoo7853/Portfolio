@@ -1046,6 +1046,42 @@ main {
   box-shadow: 0 4px 12px hsla(210, 100%, 60%, 0.3);
 }
 
+  /* Responsive fix for My Skills section */
+  @media (max-width: 600px) {
+    .skills-container {
+      flex-direction: column;
+      gap: 18px;
+      align-items: stretch;
+      width: 100%;
+      padding: 0 8px;
+    }
+    .skill-category {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    .skill-tag {
+      min-width: 90px;
+      max-width: 48vw;
+      flex: 1 1 40%;
+      margin: 0;
+      padding: 8px 6px;
+      font-size: 0.98em;
+      box-sizing: border-box;
+      justify-content: flex-start;
+    }
+    .icon-box {
+      margin-right: 6px;
+      font-size: 1.2em;
+    }
+  }
+
 
 
 
